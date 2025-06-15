@@ -11,14 +11,14 @@ train_dataloader:
   type: DataLoader
   dataset:
     type: CocoDetection
-    img_folder: /workspace/datasets/week2/baseline2-background/train/images_resized
-    ann_file: /workspace/datasets/week2/baseline2-background/train/train_resized.json
+    img_folder: /kaggle/input/bl2-bg/train/images
+    ann_file: /kaggle/input/bl2-bg/train/train.json
     return_masks: False
     transforms:
       type: Compose
       ops: ~
   shuffle: True
-  num_workers: 12
+  num_workers: 20
   drop_last: True
   collate_fn:
     type: BatchImageCollateFunction
@@ -27,14 +27,14 @@ val_dataloader:
   type: DataLoader
   dataset:
     type: CocoDetection
-    img_folder: /workspace/datasets/week2/baseline2-background/val/images_resized
-    ann_file: /workspace/datasets/week2/baseline2-background/val/val_fixed_resized.json
+    img_folder: /kaggle/input/bl2-bg/val/images
+    ann_file: /kaggle/input/bl2-bg/val/val.json
     return_masks: False
     transforms:
       type: Compose
       ops: ~
   shuffle: False
-  num_workers: 12
+  num_workers: 20
   drop_last: False
   collate_fn:
     type: BatchImageCollateFunction

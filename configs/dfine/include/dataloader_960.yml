@@ -25,8 +25,8 @@ train_dataloader:
     stop_epoch: 72
 
   shuffle: True
-  total_batch_size: 9
-  num_workers: 15
+  total_batch_size: 14
+  num_workers: 20
 
 val_dataloader:
   dataset:
@@ -35,5 +35,5 @@ val_dataloader:
         - {type: Resize, size: [960, 960], }
         - {type: ConvertPILImage, dtype: 'float32', scale: True}
   shuffle: False
-  total_batch_size: 30
-  num_workers: 12
+  total_batch_size: 46
+  num_workers: 20
